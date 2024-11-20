@@ -7,8 +7,7 @@ langchain
 langchain-community
 
 # Hugging Face and embeddings-related libraries
-sentence-transformers
-InstructorEmbedding
+sentence-transformers==2.2.2
 huggingface_hub
 
 # PyTorch for model inference
@@ -24,3 +23,4 @@ requests
 PyYAML
 PyPDF2
 faiss-cpu
+InstructorEmbedding
