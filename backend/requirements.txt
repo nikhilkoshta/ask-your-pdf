@@ -1,0 +1,21 @@
+# Backend Framework
+fastapi==0.95.2
+uvicorn==0.22.0
+
+# LangChain and its community extensions
+langchain==0.0.299
+langchain-community==0.0.3
+
+# Hugging Face and embeddings-related libraries
+sentence-transformers==2.2.2
+InstructorEmbedding==1.0.1
+huggingface_hub==0.10.1
+
+# PyTorch for model inference
+torch==2.5.1
+
+# Other utilities
+pydantic==1.10.12
+python-multipart==0.0.5
+requests==2.31.0
+
