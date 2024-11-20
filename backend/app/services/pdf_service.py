@@ -42,7 +42,7 @@ class PDFService:
         )
         chunks: List[str] = text_splitter.split_text(text)
         
-        model_name = "hkunlp/instructor-large"  
+        model_name = "hkunlp/instructor-xl"  
         model_kwargs = {'device': 'cpu'}  
         encode_kwargs = {'normalize_embeddings': True}  
         hf = HuggingFaceInstructEmbeddings(  
