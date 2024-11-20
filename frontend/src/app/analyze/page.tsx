@@ -1,13 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { Upload, Send, Loader2, ArrowLeft } from 'lucide-react'
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Card, CardContent } from "@/components/ui/Card"
 import Link from 'next/link'
-import { useTheme } from "next-themes"
 import { api, Document } from '@/lib/api'
 
 export default function PDFAnalyzer() {
@@ -18,7 +16,6 @@ export default function PDFAnalyzer() {
   const [answer, setAnswer] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const { theme } = useTheme()
 
   useEffect(() => {
     fetchDocuments()
