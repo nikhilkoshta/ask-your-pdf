@@ -16,7 +16,7 @@ export interface AnswerResponse {
   answer: string;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://ask-your-pdf-qejl.onrender.com/api";
+const API_BASE_URL = "https://ask-your-pdf-qejl.onrender.com/api";
 
 export const api = {
   async uploadDocument(file: File): Promise<Document> {
