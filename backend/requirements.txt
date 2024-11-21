@@ -8,7 +8,7 @@ langchain-community
 
 # Hugging Face and embeddings-related libraries
 sentence-transformers==2.2.2
-huggingface_hub
+huggingface-hub==0.25.0
 
 # PyTorch for model inference
 torch

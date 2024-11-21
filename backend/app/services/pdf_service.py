@@ -1,13 +1,15 @@
 # app/services/pdf_service.py
 from typing import Tuple, List
 import hashlib
+from InstructorEmbedding import INSTRUCTOR
 import os
 from fastapi import UploadFile
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceInstructEmbeddings
+from langchain.embeddings.huggingface import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 from langchain.schema.vectorstore import VectorStore
+from sentence_transformers import SentenceTransformer
 from ..config import settings
 
 class PDFService:
@@ -42,14 +44,13 @@ class PDFService:
         )
         chunks: List[str] = text_splitter.split_text(text)
         
-        model_name = "hkunlp/instructor-xl"  
         model_kwargs = {'device': 'cpu'}  
         encode_kwargs = {'normalize_embeddings': True}  
-        hf = HuggingFaceInstructEmbeddings(  
-        model_name=model_name,  
+        embeddings = HuggingFaceInstructEmbeddings(  
+        model_name="hkunlp/instructor-xl",  
         model_kwargs=model_kwargs,  
         encode_kwargs=encode_kwargs  
         )
-        vector_store: VectorStore = FAISS.from_texts(texts=chunks, embedding=hf)
+        vector_store: VectorStore = FAISS.from_texts(texts=chunks, embedding=embeddings)
         
         return vector_store

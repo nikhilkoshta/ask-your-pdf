@@ -1,0 +1,11 @@
+{
+    "builds": [
+      { "src": "package.json", "use": "@vercel/next" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/" }
+    ],
+    "env": {
+      "NEXT_PUBLIC_API_BASE_URL": "@pdf_analyzer_api_url"
+    }
+  }

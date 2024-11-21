@@ -71,7 +71,7 @@ export default function PDFAnalyzer() {
     setError(null)
     try {
       const response = await api.askQuestion(selectedDocument, question)
-      setAnswer(response.answer)
+      setAnswer(response.answer || "No answer found")
     } catch (error) {
       console.error('Error asking question:', error)
       setError(error instanceof Error ? error.message : 'Failed to get answer')
@@ -180,9 +180,18 @@ export default function PDFAnalyzer() {
           <Card className="bg-white/10 backdrop-blur-md dark:bg-waikawa-800/10">
             <CardContent className="p-6">
               <h2 className="text-2xl font-semibold mb-4 text-waikawa-900 dark:text-waikawa-100">
-                Answer
+                Detailed Answer
               </h2>
-              <p className="text-waikawa-800 dark:text-waikawa-200">{answer}</p>
+              <div 
+                className="text-waikawa-800 dark:text-waikawa-200 whitespace-pre-wrap"
+                style={{ 
+                  lineHeight: '1.6',
+                  whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word'
+                }}
+              >
+                {answer}
+              </div>
             </CardContent>
           </Card>
         )}
