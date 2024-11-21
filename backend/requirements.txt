@@ -24,3 +24,4 @@ PyYAML
 PyPDF2
 faiss-cpu
 InstructorEmbedding
+psycopg2
