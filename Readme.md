@@ -70,17 +70,7 @@ UPLOAD_DIR=./uploads
 
 ```
 
-### 5. Run Database Migrations
-
-```bash
-
-# If using Alembic (recommended)
-
-alembic upgrade head
-
-```
-
-### 6. Start Backend Server
+### 5. Start Backend Server
 
 ```bash
 
@@ -189,6 +179,3 @@ yarn dev
 ## Demonstration video 
 - https://drive.google.com/file/d/1adAO5A0ik62ROiFToaJVzMmQqJc_QQcF/view?usp=drive_link
 
-## License
-
-[Specify your license, e.g., MIT]
